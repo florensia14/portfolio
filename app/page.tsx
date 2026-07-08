@@ -174,7 +174,7 @@ const PROJECTS = [
     layout: "combined",
     tilt: "none",
     links: [
-      { label: "View Design", href: "https://www.figma.com/design/rd03t745lrBBIvSslagoUT/Litera?node-id=126-2&t=KoLlmse4MCgslkam-1" },
+      { label: "View Design", href: "https://www.figma.com/design/qVmT2TQW2qjJXrhEOtKOru/LAPOR.ID?node-id=0-1&t=ueetNUuvPWh4dogj-1" },
       { label: "View Code", href: "https://github.com/florensia14/Lapor.App_Website.git" },
     ],
   },
