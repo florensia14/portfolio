@@ -194,7 +194,7 @@ const PROJECTS = [
       { label: "View Code", href: "https://github.com/florensia14/Lapor.App_Website.git" },
     ],
   },
-   {
+  {
     title: "REELUXE",
     subtitle: "Movie Ticket Booking Website | 2026",
     desc: "Reeluxe is a modern movie ticket booking website UI/UX design concept featuring a clean blue and gold color palette. The design includes a complete user journey, from login and home page to movie details, cinema and showtime selection, interactive seat booking, snack & drinks ordering, and ticket confirmation. Designed with a consistent visual style, Reeluxe focuses on creating an intuitive, engaging, and user-friendly booking experience.",
@@ -205,7 +205,7 @@ const PROJECTS = [
     decor: null,
     layout: "combined",
     tilt: "none",
-    links: [{ label: "View Design", href: "https://www.figma.com/design/9djcekV9F8a6Uwo1HbDL03/Reeluxe?node-id=0-1&t=ZWmAktPUMB7iieM7-1"}],
+    links: [{ label: "View Design", href: "https://www.figma.com/design/9djcekV9F8a6Uwo1HbDL03/Reeluxe?node-id=0-1&t=ZWmAktPUMB7iieM7-1" }],
   },
 ];
 
@@ -296,8 +296,9 @@ function ProjectImageCarousel({
             {images.map((src, i) => (
               <div
                 key={src}
-                className={`absolute inset-0 transition-opacity duration-300 ${i === index ? "opacity-100" : "pointer-events-none opacity-0"
-                  }`}
+                className={`absolute inset-0 transition-opacity duration-300 ${
+                  i === index ? "opacity-100" : "pointer-events-none opacity-0"
+                }`}
               >
                 <Image
                   src={src}
@@ -312,7 +313,7 @@ function ProjectImageCarousel({
           </div>
         </motion.div>
 
-        {/* Tombol panah sekarang jadi anak LANGSUNG dari kotak luar (bukan dari div yang
+        {/* Tombol panah jadi anak LANGSUNG dari kotak luar (bukan dari div yang
             di-counter-rotate & di dalam padding), jadi posisinya presisi PAS di garis
             pinggir kotak (border line) — left-0 / right-0 + translate -1/2 = pusat
             tombol nempel tepat di garis border, setengah nongol keluar kotak. */}
@@ -345,8 +346,9 @@ function ProjectImageCarousel({
           {images.map((_, i) => (
             <span
               key={i}
-              className={`h-2 rounded-full transition-all ${i === index ? "w-6 bg-ink" : "w-2 bg-ink/30"
-                }`}
+              className={`h-2 rounded-full transition-all ${
+                i === index ? "w-6 bg-ink" : "w-2 bg-ink/30"
+              }`}
             />
           ))}
         </div>
@@ -399,10 +401,11 @@ export default function Home() {
     <main className="overflow-x-hidden">
       {/* ---------- NAVBAR ---------- */}
       <nav
-        className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${scrolled
-          ? "bg-blue-deep/90 backdrop-blur-md shadow-xl py-3"
-          : "bg-transparent py-4 md:py-6"
-          }`}
+        className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
+          scrolled
+            ? "bg-blue-deep/90 backdrop-blur-md shadow-xl py-3"
+            : "bg-transparent py-4 md:py-6"
+        }`}
       >
         <div className="mx-auto flex max-w-7xl flex-wrap items-center justify-center gap-x-3 gap-y-2 px-4 sm:gap-x-5 md:gap-x-8 md:px-8 lg:gap-x-14">
           {NAV_LINKS.map((link) => (
@@ -410,16 +413,18 @@ export default function Home() {
               key={link.href}
               href={link.href}
               onClick={() => setActiveHref(link.href)}
-              className={`group relative whitespace-nowrap text-[11px] font-semibold tracking-[0.05em] text-paper transition-all duration-300 hover:scale-105 sm:text-xs sm:tracking-[0.06em] md:text-sm md:tracking-[0.08em] ${activeHref === link.href ? "text-white" : "opacity-90"
-                }`}
+              className={`group relative whitespace-nowrap text-[11px] font-semibold tracking-[0.05em] text-paper transition-all duration-300 hover:scale-105 sm:text-xs sm:tracking-[0.06em] md:text-sm md:tracking-[0.08em] ${
+                activeHref === link.href ? "text-white" : "opacity-90"
+              }`}
             >
               {link.label}
 
               <span
-                className={`absolute -bottom-1.5 left-1/2 h-[2px] rounded-full bg-[#F8DF44] transition-all duration-300 md:-bottom-2 md:h-[3px] ${activeHref === link.href
-                  ? "w-full -translate-x-1/2"
-                  : "w-0 -translate-x-1/2 group-hover:w-full"
-                  }`}
+                className={`absolute -bottom-1.5 left-1/2 h-[2px] rounded-full bg-[#F8DF44] transition-all duration-300 md:-bottom-2 md:h-[3px] ${
+                  activeHref === link.href
+                    ? "w-full -translate-x-1/2"
+                    : "w-0 -translate-x-1/2 group-hover:w-full"
+                }`}
               />
             </a>
           ))}
@@ -485,15 +490,7 @@ export default function Home() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.7 }}
           suppressHydrationWarning
-          className="
-      text-5xl
-      font-extrabold
-      tracking-[0.18em]
-      sm:text-6xl
-      md:text-7xl
-      lg:text-8xl
-      xl:text-9xl
-    "
+          className="text-5xl font-extrabold tracking-[0.18em] sm:text-6xl md:text-7xl lg:text-8xl xl:text-9xl"
         >
           PORTFOLIO
         </motion.h1>
@@ -507,14 +504,7 @@ export default function Home() {
             duration: 0.7,
           }}
           suppressHydrationWarning
-          className="
-      mt-2
-      font-display
-      text-4xl
-      sm:text-5xl
-      md:text-6xl
-      lg:text-7xl
-    "
+          className="mt-2 font-display text-4xl sm:text-5xl md:text-6xl lg:text-7xl"
         >
           Florensia
         </motion.p>
@@ -531,20 +521,7 @@ export default function Home() {
         >
           <span
             suppressHydrationWarning
-            className="
-        rounded-full
-        bg-cream
-        px-6
-        py-3
-        text-xs
-        font-semibold
-        text-ink
-        shadow-xl
-        sm:px-8
-        sm:text-sm
-        md:px-10
-        md:text-base
-      "
+            className="rounded-full bg-cream px-6 py-3 text-xs font-semibold text-ink shadow-xl sm:px-8 sm:text-sm md:px-10 md:text-base"
           >
             Software Engineering Student
           </span>
@@ -563,12 +540,7 @@ export default function Home() {
             SCROLL
           </span>
 
-          <svg
-            width="24"
-            height="24"
-            viewBox="0 0 24 24"
-            fill="none"
-          >
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
             <path
               d="M6 9L12 15L18 9"
               stroke="white"
@@ -599,12 +571,7 @@ export default function Home() {
               <Image src={ICONS.omg} alt="OMG!" width={110} height={74} />
             </motion.div>
             <div className="relative aspect-[3/4] w-full overflow-hidden rounded-2xl border-4 border-pink-main bg-paper/60">
-              <Image
-                src={ICONS.cv}
-                alt="Foto profil"
-                fill
-                className="object-cover"
-              />
+              <Image src={ICONS.cv} alt="Foto profil" fill className="object-cover" />
               <div className="absolute inset-x-4 bottom-4 rounded-lg bg-pink-main py-2 text-center text-sm font-semibold text-paper">
                 Florensia Gaciela Nainggolan
               </div>
@@ -651,19 +618,19 @@ export default function Home() {
       >
         <div className="mx-auto max-w-4xl">
           <div className="mb-10 flex items-center justify-center gap-3">
-            <h2 className="text-2xl font-bold tracking-wide sm:text-3xl underline decoration-solid decoration-2 underline-offset-8 decoration-[#F8DF44]">
+            <h2 className="text-2xl font-bold tracking-wide underline decoration-solid decoration-2 underline-offset-8 decoration-[#F8DF44] sm:text-3xl">
               Goals &amp; Interests
             </h2>
           </div>
           <div className="space-y-6">
-            <p className="text-base font-bold leading-loose text-center sm:text-lg">
+            <p className="text-center text-base font-bold leading-loose sm:text-lg">
               My reason for choosing Software Engineering (RPL) as my major is
               to learn the software development process, from design and
               development to testing. I want to build my technical skills and
-              strengthen my understanding ofstarSmall programming logic so I can apply
+              strengthen my understanding of programming logic so I can apply
               them in real-world work environments.
             </p>
-            <p className="text-base font-bold leading-loose text-center sm:text-lg">
+            <p className="text-center text-base font-bold leading-loose sm:text-lg">
               My interests are focused on website and application development
               and design, particularly in creating interfaces that are clean,
               functional, and easy to use. I&apos;m eager to learn new
@@ -677,7 +644,7 @@ export default function Home() {
       {/* ---------- SKILLS ---------- */}
       <section
         id="skills"
-        className="relative bg-pink-soft px-6 pb-8 pt-15 border-black border-2"
+        className="relative border-2 border-black bg-pink-soft px-6 pb-8 pt-15"
       >
         {/* badge nyangkut di antara denim & pink */}
         <div
@@ -706,9 +673,9 @@ export default function Home() {
               viewport={{ once: false, amount: 0.3 }}
               transition={{ duration: 0.4, delay: (i % 8) * 0.05 }}
               whileHover={{ y: -4, rotate: i % 2 === 0 ? -2 : 2 }}
-              className="flex items-center gap-3 sm:gap-6 rounded-lg bg-cream px-4 py-3 text-sm font-bold text-ink shadow-sm sm:text-lg"
+              className="flex items-center gap-3 rounded-lg bg-cream px-4 py-3 text-sm font-bold text-ink shadow-sm sm:gap-6 sm:text-lg"
             >
-              <span className="flex h-9 w-9 sm:h-10 sm:w-10 shrink-0 items-center justify-center">
+              <span className="flex h-9 w-9 shrink-0 items-center justify-center sm:h-10 sm:w-10">
                 <Image src={skill.icon} alt="" width={36} height={36} />
               </span>
               {skill.name}
@@ -747,7 +714,7 @@ export default function Home() {
 
       {/* ---------- PROJECTS ---------- */}
       <section id="projects" className="relative bg-blue-deep px-6 py-16">
-        {/* ---------- PROJECT ---------- */}
+        {/* ---------- SECTION TITLE ---------- */}
         <div className="relative mb-16 flex items-center justify-center">
           {/* Dashed Line */}
           <div className="absolute left-1/2 top-1/2 h-0 w-screen -translate-x-1/2 -translate-y-1/2 border-t-2 border-dashed border-black/70 sm:border-t-[3px]" />
@@ -759,6 +726,7 @@ export default function Home() {
             </h2>
           </div>
         </div>
+
         <div className="mx-auto flex max-w-5xl flex-col gap-16">
           {PROJECTS.map((project) => {
             const imageOnLeft = project.tilt !== "right";
@@ -807,8 +775,9 @@ export default function Home() {
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: false, amount: 0.3 }}
                     transition={{ duration: 0.5 }}
-                    className={`relative flex min-h-[360px] flex-col justify-center rounded-2xl bg-cream p-6 shadow-md sm:min-h-[460px] sm:p-8 ${imageOnLeft ? "sm:order-2" : "sm:order-1"
-                      }`}
+                    className={`relative flex min-h-[360px] flex-col justify-center rounded-2xl bg-cream p-6 shadow-md sm:min-h-[460px] sm:p-8 ${
+                      imageOnLeft ? "sm:order-2" : "sm:order-1"
+                    }`}
                   >
                     <h3 className="text-lg font-extrabold text-ink sm:text-xl">
                       {project.title}
@@ -816,13 +785,19 @@ export default function Home() {
                     <p className="mb-3 text-sm font-semibold text-pink-main sm:text-base">
                       {project.subtitle}
                     </p>
-                    <p className="mb-5 text-sm font-semibold leading-relaxed text-ink/80 text-justify">
+                    <p className="mb-5 text-justify text-sm font-semibold leading-relaxed text-ink/80">
                       {project.desc}
                     </p>
                     {linkButtons}
                     {project.decor && (
                       <span className="pointer-events-none absolute bottom-4 right-4">
-                        <Image src={project.decor} alt="" width={60} height={60} className="h-auto w-10 sm:w-16" />
+                        <Image
+                          src={project.decor}
+                          alt=""
+                          width={60}
+                          height={60}
+                          className="h-auto w-10 sm:w-16"
+                        />
                       </span>
                     )}
                   </motion.div>
@@ -857,7 +832,7 @@ export default function Home() {
                     <p className="mb-3 text-sm font-semibold text-pink-main sm:text-base">
                       {project.subtitle}
                     </p>
-                    <p className="mb-5 text-sm font-semibold leading-relaxed text-ink/80 text-justify">
+                    <p className="mb-5 text-justify text-sm font-semibold leading-relaxed text-ink/80">
                       {project.desc}
                     </p>
                     {linkButtons}
@@ -885,7 +860,6 @@ export default function Home() {
         <div className="absolute inset-0" />
 
         <div className="relative z-10 mx-auto max-w-4xl px-6">
-
           {/* Title */}
           <div className="relative mb-16 flex items-center justify-center">
             <div className="absolute left-1/2 top-1/2 h-0 w-screen -translate-x-1/2 -translate-y-1/2 border-t-2 border-dashed border-black/70 sm:border-t-[3px]" />
@@ -897,58 +871,54 @@ export default function Home() {
             </div>
           </div>
 
-          {/* Contact */}
-          <div className="mx-auto grid max-w-2xl grid-cols-2 gap-x-6 gap-y-8 sm:gap-x-12 sm:gap-y-10">
+          {/* Contact list.
+              PENTING: parent tiap item pakai `flex-col items-center` di mobile.
+              Karena align-items bukan `stretch`, anaknya otomatis nyusut sesuai
+              konten (bukan lebar container) — jadi label yang panjang (email)
+              nggak tau kapan harus wrap dan malah nembus keluar layar.
+              Fix: kasih `w-full min-w-0` di container + `w-full max-w-full break-words`
+              di span labelnya, supaya dia dipaksa ikut lebar grid cell. */}
+          <div className="mx-auto grid max-w-2xl grid-cols-2 gap-x-4 gap-y-8 sm:gap-x-12 sm:gap-y-10">
+            {CONTACTS.map((contact) => {
+              const iconBox = (
+                <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-full bg-white/15 sm:h-14 sm:w-14">
+                  <Image
+                    src={contact.icon}
+                    alt=""
+                    width={26}
+                    height={26}
+                    className="sm:h-[34px] sm:w-[34px]"
+                  />
+                </div>
+              );
 
-            {CONTACTS.map((contact) =>
-              contact.href ? (
+              const label = (
+                <span className="w-full max-w-full break-words text-center text-[11px] leading-snug font-bold text-white sm:text-left sm:text-lg">
+                  {contact.label}
+                </span>
+              );
+
+              const sharedClasses =
+                "flex h-auto w-full min-w-0 flex-col items-center justify-center gap-1.5 py-2 text-center sm:h-28 sm:flex-row sm:justify-start sm:gap-5 sm:text-left";
+
+              return contact.href ? (
                 <a
                   key={contact.label}
                   href={contact.href}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="flex h-24 flex-col items-center justify-center gap-2 text-center sm:h-28 sm:flex-row sm:justify-start sm:gap-5 sm:text-left"
+                  className={sharedClasses}
                 >
-                  <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-full bg-white/15 sm:h-14 sm:w-14">
-                    <Image
-                      src={contact.icon}
-                      alt=""
-                      width={26}
-                      height={26}
-                      className="sm:h-[34px] sm:w-[34px]"
-                    />
-                  </div>
-
-                  <span
-                    className="break-words font-bold text-white text-sm sm:text-lg"
-                  >
-                    {contact.label}
-                  </span>
+                  {iconBox}
+                  {label}
                 </a>
               ) : (
-                <div
-                  key={contact.label}
-                  className="flex h-24 flex-col items-center justify-center gap-2 text-center sm:h-28 sm:flex-row sm:justify-start sm:gap-5 sm:text-left"
-                >
-                  <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-full bg-white/15 sm:h-14 sm:w-14">
-                    <Image
-                      src={contact.icon}
-                      alt=""
-                      width={26}
-                      height={26}
-                      className="sm:h-[34px] sm:w-[34px]"
-                    />
-                  </div>
-
-                  <span
-                    className="break-words font-bold text-white text-sm sm:text-lg"
-                  >
-                    {contact.label}
-                  </span>
+                <div key={contact.label} className={sharedClasses}>
+                  {iconBox}
+                  {label}
                 </div>
-              )
-            )}
-
+              );
+            })}
           </div>
         </div>
       </section>
