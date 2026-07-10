@@ -55,22 +55,22 @@ const NAV_LINKS = [
    MySQL belum ada file-nya di folder — tambahkan mysql.png kalau sudah punya. */
 const SKILLS = [
   { name: "JavaScript", icon: "/element/js.webp" },
-  { name: "Tailwind", icon: "/element/tailwind.png" },
+  { name: "Tailwind", icon: "/element/Tailwind.png" },
   { name: "PostgreSQL", icon: "/element/PostgreSQL.png" },
   { name: "Node.js", icon: "/element/nodejs.png" },
-  { name: "CSS", icon: "/element/css.png" },
+  { name: "CSS", icon: "/element/CSS.png" },
   { name: "MySQL", icon: "/element/sql.png" },
-  { name: "Express.js", icon: "/element/expressjs.jpg" },
-  { name: "React Native", icon: "/element/React Native.png" },
+  { name: "Express.js", icon: "/element/EXP.png" },
+  { name: "React Native", icon: "/element/React.png" },
   { name: "Figma", icon: "/element/figma.png" },
   { name: "HTML", icon: "/element/html.png" },
-  { name: "Supabase", icon: "/element/supabase.png" },
+  { name: "Supabase", icon: "/element/Supabase.png" },
   { name: "GitHub", icon: "/element/githubb.png" },
   { name: "Python", icon: "/element/python.png" },
-  { name: "Next.js", icon: "/element/Next.js.png" },
+  { name: "Next.js", icon: "/element/Next.png" },
   { name: "Visual Studio Code", icon: "/element/vs.png" },
-  { name: "TypeScript", icon: "/element/TS.png" },
-  { name: "Docker", icon: "/element/docker.png" },
+  { name: "TypeScript", icon: "/element/TypeScript.png" },
+  { name: "Docker", icon: "/element/dockerr.png" },
 ];
 
 /* ------------------------------------------------------------------ */
