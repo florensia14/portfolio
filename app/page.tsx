@@ -64,7 +64,7 @@ const SKILLS = [
   { name: "React Native", icon: "/element/React.png" },
   { name: "Figma", icon: "/element/figma.png" },
   { name: "HTML", icon: "/element/html.png" },
-  { name: "Supabase", icon: "/element/icon SUPABASE.png" },
+  { name: "Supabase", icon: "/element/SUPAABAASEE.png" },
   { name: "GitHub", icon: "/element/githubb.png" },
   { name: "Python", icon: "/element/python.png" },
   { name: "Next.js", icon: "/element/Next.png" },
