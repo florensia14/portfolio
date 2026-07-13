@@ -295,9 +295,8 @@ function ProjectImageCarousel({
             {images.map((src, i) => (
               <div
                 key={src}
-                className={`absolute inset-0 transition-opacity duration-300 ${
-                  i === index ? "opacity-100" : "pointer-events-none opacity-0"
-                }`}
+                className={`absolute inset-0 transition-opacity duration-300 ${i === index ? "opacity-100" : "pointer-events-none opacity-0"
+                  }`}
               >
                 <Image
                   src={src}
@@ -345,9 +344,8 @@ function ProjectImageCarousel({
           {images.map((_, i) => (
             <span
               key={i}
-              className={`h-2 rounded-full transition-all ${
-                i === index ? "w-6 bg-ink" : "w-2 bg-ink/30"
-              }`}
+              className={`h-2 rounded-full transition-all ${i === index ? "w-6 bg-ink" : "w-2 bg-ink/30"
+                }`}
             />
           ))}
         </div>
@@ -400,11 +398,10 @@ export default function Home() {
     <main className="overflow-x-hidden">
       {/* ---------- NAVBAR ---------- */}
       <nav
-        className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
-          scrolled
+        className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${scrolled
             ? "bg-blue-deep/90 backdrop-blur-md shadow-xl py-3"
             : "bg-transparent py-4 md:py-6"
-        }`}
+          }`}
       >
         <div className="mx-auto flex max-w-7xl flex-wrap items-center justify-center gap-x-3 gap-y-2 px-4 sm:gap-x-5 md:gap-x-8 md:px-8 lg:gap-x-14">
           {NAV_LINKS.map((link) => (
@@ -412,18 +409,16 @@ export default function Home() {
               key={link.href}
               href={link.href}
               onClick={() => setActiveHref(link.href)}
-              className={`group relative whitespace-nowrap text-[11px] font-semibold tracking-[0.05em] text-paper transition-all duration-300 hover:scale-105 sm:text-xs sm:tracking-[0.06em] md:text-sm md:tracking-[0.08em] ${
-                activeHref === link.href ? "text-white" : "opacity-90"
-              }`}
+              className={`group relative whitespace-nowrap text-[11px] font-semibold tracking-[0.05em] text-paper transition-all duration-300 hover:scale-105 sm:text-xs sm:tracking-[0.06em] md:text-sm md:tracking-[0.08em] ${activeHref === link.href ? "text-white" : "opacity-90"
+                }`}
             >
               {link.label}
 
               <span
-                className={`absolute -bottom-1.5 left-1/2 h-[2px] rounded-full bg-[#F8DF44] transition-all duration-300 md:-bottom-2 md:h-[3px] ${
-                  activeHref === link.href
+                className={`absolute -bottom-1.5 left-1/2 h-[2px] rounded-full bg-[#F8DF44] transition-all duration-300 md:-bottom-2 md:h-[3px] ${activeHref === link.href
                     ? "w-full -translate-x-1/2"
                     : "w-0 -translate-x-1/2 group-hover:w-full"
-                }`}
+                  }`}
               />
             </a>
           ))}
@@ -640,76 +635,48 @@ export default function Home() {
         </div>
       </section>
 
-     {/* ---------- SKILLS ---------- */}
-<section
-  id="skills"
-  className="relative border-2 border-black bg-pink-soft px-6 pb-12 pt-15"
->
-  {/* badge */}
-  <div
-    className="absolute left-1/2 top-0 w-fit -translate-x-1/2 -translate-y-1/2 rounded-lg border-2 border-black px-10 py-3 shadow-md"
-    style={{ backgroundColor: "#ABD3F0" }}
-  >
-    <h2 className="text-center text-2xl font-extrabold text-pink-main sm:text-3xl">
-      Skill&apos;s
-    </h2>
-  </div>
-
-  {/* decorative stars */}
-  <div className="pointer-events-none absolute -left-14 top-1/3">
-    <Image
-      src={ICONS.starBlue}
-      alt=""
-      width={170}
-      height={170}
-    />
-  </div>
-
-  <div className="pointer-events-none absolute -right-14 top-1/4">
-    <Image
-      src={ICONS.starBlue}
-      alt=""
-      width={170}
-      height={170}
-    />
-  </div>
-
-  {/* skills grid */}
-  <div className="relative mx-auto mt-16 max-w-7xl">
-    <div className="grid grid-cols-2 gap-6 md:grid-cols-4">
-      {SKILLS.map((skill, i) => (
-        <motion.div
-          key={skill.name}
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: false, amount: 0.3 }}
-          transition={{
-            duration: 0.4,
-            delay: (i % 8) * 0.05,
-          }}
-          whileHover={{
-            y: -6,
-            scale: 1.03,
-          }}
-          className="flex flex-col items-center justify-center rounded-2xl bg-cream px-6 py-8 text-center shadow-md transition-all"
+      {/* ---------- SKILLS ---------- */}
+      <section
+        id="skills"
+        className="relative scroll-mt-16 sm:scroll-mt-20 border-2 border-black bg-pink-soft px-6 pb-8 pt-15"
+      >
+        {/* badge nyangkut di antara denim & pink */}
+        <div
+          className="absolute left-1/2 top-0 w-fit -translate-x-1/2 -translate-y-1/2 rounded-lg border-2 border-black px-10 py-3 shadow-md"
+          style={{ backgroundColor: "#ABD3F0" }}
         >
-          <div className="mb-4 flex h-16 w-16 items-center justify-center">
-            <Image
-              src={skill.icon}
-              alt={skill.name}
-              width={56}
-              height={56}
-            />
-          </div>
+          <h2 className="text-center text-2xl font-extrabold text-pink-main sm:text-3xl">
+            Skill&apos;s
+          </h2>
+        </div>
 
-          <h3 className="text-lg font-extrabold text-ink md:text-xl">
-            {skill.name}
-          </h3>
-        </motion.div>
-      ))}
-    </div>
-  </div>
-</section>
+        {/* decorative stars kiri-kanan */}
+        <div className="pointer-events-none absolute -left-14 top-1/3 opacity-100">
+          <Image src={ICONS.starBlue} alt="" width={170} height={170} />
+        </div>
+        <div className="pointer-events-none absolute -right-14 top-1/4 opacity-100">
+          <Image src={ICONS.starBlue} alt="" width={170} height={170} />
+        </div>
+
+        <div className="relative mx-auto mt-14 grid max-w-5xl grid-cols-2 gap-x-4 gap-y-6 sm:grid-cols-3 sm:gap-x-8 lg:grid-cols-4 lg:gap-x-10">
+          {SKILLS.map((skill, i) => (
+            <motion.div
+              key={skill.name}
+              initial={{ opacity: 0, y: 16 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: false, amount: 0.3 }}
+              transition={{ duration: 0.4, delay: (i % 8) * 0.05 }}
+              whileHover={{ y: -4, rotate: i % 2 === 0 ? -2 : 2 }}
+              className="flex items-center gap-3 rounded-lg bg-cream px-4 py-3 text-sm font-bold text-ink shadow-sm sm:gap-6 sm:text-lg"
+            >
+              <span className="flex h-9 w-9 shrink-0 items-center justify-center sm:h-10 sm:w-10">
+                <Image src={skill.icon} alt="" width={36} height={36} />
+              </span>
+              {skill.name}
+            </motion.div>
+          ))}
+        </div>
+      </section>
 
       {/* ---------- BUTTERFLY DIVIDER (animated) ---------- */}
       <div className="flex w-full items-center justify-between gap-2 overflow-hidden bg-cream px-4 py-8 sm:px-8 sm:py-10">
@@ -802,9 +769,8 @@ export default function Home() {
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: false, amount: 0.3 }}
                     transition={{ duration: 0.5 }}
-                    className={`relative flex min-h-[360px] flex-col justify-center rounded-2xl bg-cream p-6 shadow-md sm:min-h-[460px] sm:p-8 ${
-                      imageOnLeft ? "sm:order-2" : "sm:order-1"
-                    }`}
+                    className={`relative flex min-h-[360px] flex-col justify-center rounded-2xl bg-cream p-6 shadow-md sm:min-h-[460px] sm:p-8 ${imageOnLeft ? "sm:order-2" : "sm:order-1"
+                      }`}
                   >
                     <h3 className="text-lg font-extrabold text-ink sm:text-xl">
                       {project.title}
