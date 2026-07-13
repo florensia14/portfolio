@@ -640,48 +640,76 @@ export default function Home() {
         </div>
       </section>
 
-      {/* ---------- SKILLS ---------- */}
-      <section
-        id="skills"
-        className="relative border-2 border-black bg-pink-soft px-6 pb-8 pt-15"
-      >
-        {/* badge nyangkut di antara denim & pink */}
-        <div
-          className="absolute left-1/2 top-0 w-fit -translate-x-1/2 -translate-y-1/2 rounded-lg border-2 border-black px-10 py-3 shadow-md"
-          style={{ backgroundColor: "#ABD3F0" }}
+     {/* ---------- SKILLS ---------- */}
+<section
+  id="skills"
+  className="relative border-2 border-black bg-pink-soft px-6 pb-12 pt-15"
+>
+  {/* badge */}
+  <div
+    className="absolute left-1/2 top-0 w-fit -translate-x-1/2 -translate-y-1/2 rounded-lg border-2 border-black px-10 py-3 shadow-md"
+    style={{ backgroundColor: "#ABD3F0" }}
+  >
+    <h2 className="text-center text-2xl font-extrabold text-pink-main sm:text-3xl">
+      Skill&apos;s
+    </h2>
+  </div>
+
+  {/* decorative stars */}
+  <div className="pointer-events-none absolute -left-14 top-1/3">
+    <Image
+      src={ICONS.starBlue}
+      alt=""
+      width={170}
+      height={170}
+    />
+  </div>
+
+  <div className="pointer-events-none absolute -right-14 top-1/4">
+    <Image
+      src={ICONS.starBlue}
+      alt=""
+      width={170}
+      height={170}
+    />
+  </div>
+
+  {/* skills grid */}
+  <div className="relative mx-auto mt-16 max-w-7xl">
+    <div className="grid grid-cols-2 gap-6 md:grid-cols-4">
+      {SKILLS.map((skill, i) => (
+        <motion.div
+          key={skill.name}
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: false, amount: 0.3 }}
+          transition={{
+            duration: 0.4,
+            delay: (i % 8) * 0.05,
+          }}
+          whileHover={{
+            y: -6,
+            scale: 1.03,
+          }}
+          className="flex flex-col items-center justify-center rounded-2xl bg-cream px-6 py-8 text-center shadow-md transition-all"
         >
-          <h2 className="text-center text-2xl font-extrabold text-pink-main sm:text-3xl">
-            Skill&apos;s
-          </h2>
-        </div>
+          <div className="mb-4 flex h-16 w-16 items-center justify-center">
+            <Image
+              src={skill.icon}
+              alt={skill.name}
+              width={56}
+              height={56}
+            />
+          </div>
 
-        {/* decorative stars kiri-kanan */}
-        <div className="pointer-events-none absolute -left-14 top-1/3 opacity-100">
-          <Image src={ICONS.starBlue} alt="" width={170} height={170} />
-        </div>
-        <div className="pointer-events-none absolute -right-14 top-1/4 opacity-100">
-          <Image src={ICONS.starBlue} alt="" width={170} height={170} />
-        </div>
-
-        <div className="relative mx-auto mt-14 grid max-w-4xl grid-cols-2 gap-x-8 gap-y-6 sm:gap-x-14 lg:grid-cols-3">
-          {SKILLS.map((skill, i) => (
-            <motion.div
-              key={skill.name}
-              initial={{ opacity: 0, y: 16 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: false, amount: 0.3 }}
-              transition={{ duration: 0.4, delay: (i % 8) * 0.05 }}
-              whileHover={{ y: -4, rotate: i % 2 === 0 ? -2 : 2 }}
-              className="flex items-center gap-3 rounded-lg bg-cream px-4 py-3 text-sm font-bold text-ink shadow-sm sm:gap-6 sm:text-lg"
-            >
-              <span className="flex h-9 w-9 shrink-0 items-center justify-center sm:h-10 sm:w-10">
-                <Image src={skill.icon} alt="" width={36} height={36} />
-              </span>
-              {skill.name}
-            </motion.div>
-          ))}
-        </div>
-      </section>
+          <h3 className="text-lg font-extrabold text-ink md:text-xl">
+            {skill.name}
+          </h3>
+        </motion.div>
+      ))}
+    </div>
+  </div>
+</section>
 
       {/* ---------- BUTTERFLY DIVIDER (animated) ---------- */}
       <div className="flex w-full items-center justify-between gap-2 overflow-hidden bg-cream px-4 py-8 sm:px-8 sm:py-10">
