@@ -66,7 +66,6 @@ const SKILLS = [
   { name: "HTML", icon: "/element/html.png" },
   { name: "Supabase", icon: "/element/SUPAABAASEE.png" },
   { name: "GitHub", icon: "/element/githubb.png" },
-  { name: "Python", icon: "/element/python.png" },
   { name: "Next.js", icon: "/element/Next.png" },
   { name: "Visual Studio Code", icon: "/element/vs.png" },
   { name: "TypeScript", icon: "/element/TypeScript.png" },
