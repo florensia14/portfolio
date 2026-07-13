@@ -4,29 +4,22 @@ import Image from "next/image";
 import { motion } from "framer-motion";
 import { useEffect, useState } from "react";
 
-/* Icon pakai file PNG kamu sendiri, taruh di public/element/
-   lalu sesuaikan nama filenya di bawah kalau beda */
 const ICONS = {
-  // bintang (stars)
   kupu: "/element/home.png",
   starSmall: "/element/starSmall.png",
   starBlue: "/element/bintang biru.png",
   starPink: "/element/bintang pink.png",
   starSkill: "/element/bintangSkill.png",
-  // sparkle / burst
   sparkleBlue: "/element/bom biru.png",
   sparklePink: "/element/bom pink.png",
-  // kupu-kupu (butterflies)
   butterflyPink: "/element/kupu pink (1).png",
   butterflyYellow: "/element/kupu kuning(2).png",
-  // dekorasi lain
   flower: "/element/flower.png",
   denim: "/element/denim.jpeg",
   omg: "/element/omg.png",
   tulip: "/element/tulip.png",
   user: "/element/user.png",
   cv: "/element/cv.jpeg",
-  // kontak
   email: "/element/email.png",
   github: "/element/githubb.png",
   githubb: "/element/github.png",
@@ -38,10 +31,6 @@ const ICONS = {
   instagram: "/element/instagram.png",
 };
 
-/* ------------------------------------------------------------------ */
-/*  DATA — gampang diubah di sini tanpa nyentuh JSX di bawah           */
-/* ------------------------------------------------------------------ */
-
 const NAV_LINKS = [
   { label: "Home", href: "#home" },
   { label: "About", href: "#about" },
@@ -51,8 +40,6 @@ const NAV_LINKS = [
   { label: "Contact", href: "#contact" },
 ];
 
-/* Nama file disamakan persis dengan yang ada di public/element/ kamu.
-   MySQL belum ada file-nya di folder — tambahkan mysql.png kalau sudah punya. */
 const SKILLS = [
   { name: "JavaScript", icon: "/element/js.webp" },
   { name: "Tailwind", icon: "/element/icon tailwind.png" },
@@ -71,14 +58,6 @@ const SKILLS = [
   { name: "TypeScript", icon: "/element/TypeScript.png" },
   { name: "Docker", icon: "/element/dockerr.png" },
 ];
-
-/* ------------------------------------------------------------------ */
-/*  TEMPLATE GAMBAR PROJECT                                            */
-/*  Tiap project dikasih 6 slot gambar (elem-1.png s/d elem-6.png).    */
-/*  Kalau fotomu cuma 2-3, tinggal HAPUS baris yang tidak kepake.      */
-/*  Kalau lebih dari 6, tinggal TAMBAH baris baru dengan pola yang     */
-/*  sama. File-nya taruh di public/element/ dengan nama yang sama.    */
-/* ------------------------------------------------------------------ */
 
 const PROJECTS = [
   {
@@ -234,10 +213,6 @@ const BUTTERFLY_COLORS = [
   "#DE6495", "#F2C744", "#799FBB", "#F2C744", "#DE6495", "#F2C744", "#799FBB",
 ];
 
-/* ------------------------------------------------------------------ */
-/*  CAROUSEL — panah kiri/kanan buat pindah gambar project             */
-/* ------------------------------------------------------------------ */
-
 function ChevronIcon({ direction }: { direction: "left" | "right" }) {
   return (
     <svg width="14" height="14" viewBox="0 0 24 24" fill="none">
@@ -276,8 +251,6 @@ function ProjectImageCarousel({
 
   return (
     <div className="flex flex-col items-center gap-3">
-      {/* Kotak luar: border pink-main aja (tanpa stroke hitam tambahan),
-          dipakai di SEMUA project (split maupun combined), berapapun jumlah foto. */}
       <motion.div
         initial={{ opacity: 0, rotate: tiltDeg }}
         whileInView={{ opacity: 1, rotate: tiltDeg }}
@@ -311,10 +284,6 @@ function ProjectImageCarousel({
           </div>
         </motion.div>
 
-        {/* Tombol panah jadi anak LANGSUNG dari kotak luar (bukan dari div yang
-            di-counter-rotate & di dalam padding), jadi posisinya presisi PAS di garis
-            pinggir kotak (border line) — left-0 / right-0 + translate -1/2 = pusat
-            tombol nempel tepat di garis border, setengah nongol keluar kotak. */}
         {hasMultiple && !isFirst && (
           <button
             type="button"
@@ -338,7 +307,6 @@ function ProjectImageCarousel({
         )}
       </motion.div>
 
-      {/* Dot indikator tetap di LUAR kotak gambar (baris terpisah di bawahnya) */}
       {hasMultiple && (
         <div className="flex items-center gap-1.5">
           {images.map((_, i) => (
@@ -354,10 +322,7 @@ function ProjectImageCarousel({
   );
 }
 
-/* ------------------------------------------------------------------ */
 /*  PAGE                                                               */
-/* ------------------------------------------------------------------ */
-
 export default function Home() {
   const [activeHref, setActiveHref] = useState(NAV_LINKS[0].href);
 
@@ -430,7 +395,6 @@ export default function Home() {
         id="home"
         className="relative flex min-h-screen flex-col items-center justify-center overflow-hidden bg-pink-main px-6 pt-28 pb-16 text-center text-paper"
       >
-        {/* Sparkle — smaller, tucked near the title's top-left */}
         <motion.div
           initial={{ opacity: 0, scale: 0.6 }}
           animate={{ opacity: 1, scale: 1 }}
@@ -650,7 +614,6 @@ export default function Home() {
           </h2>
         </div>
 
-        {/* decorative stars kiri-kanan */}
         <div className="pointer-events-none absolute -left-14 top-1/3 opacity-100">
           <Image src={ICONS.starBlue} alt="" width={170} height={170} />
         </div>
@@ -660,20 +623,30 @@ export default function Home() {
 
         <div className="relative mx-auto mt-14 grid max-w-5xl grid-cols-2 gap-x-4 gap-y-6 sm:grid-cols-3 sm:gap-x-8 lg:grid-cols-4 lg:gap-x-10">
           {SKILLS.map((skill, i) => (
-            <motion.div
-              key={skill.name}
-              initial={{ opacity: 0, y: 16 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: false, amount: 0.3 }}
-              transition={{ duration: 0.4, delay: (i % 8) * 0.05 }}
-              whileHover={{ y: -4, rotate: i % 2 === 0 ? -2 : 2 }}
-              className="flex items-center gap-3 rounded-lg bg-cream px-4 py-3 text-sm font-bold text-ink shadow-sm sm:gap-6 sm:text-lg"
+           <motion.div
+            key={skill.name}
+            initial={{ opacity: 0, y: 16 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: false, amount: 0.3 }}
+            transition={{ duration: 0.4, delay: (i % 8) * 0.05 }}
+            whileHover={{ y: -4, rotate: i % 2 === 0 ? -2 : 2 }}
+            className="flex flex-row items-center gap-3 rounded-lg bg-cream px-4 py-3 text-sm font-bold text-ink shadow-sm sm:gap-4"
+            style={{ minHeight: "0" }}
+          >
+            <span
+              className="flex shrink-0 items-center justify-center"
+              style={{ width: 32, height: 32 }}
             >
-              <span className="flex h-9 w-9 shrink-0 items-center justify-center sm:h-10 sm:w-10">
-                <Image src={skill.icon} alt="" width={36} height={36} />
-              </span>
-              {skill.name}
-            </motion.div>
+              <Image
+                src={skill.icon}
+                alt=""
+                width={32}
+                height={32}
+                style={{ width: 32, height: 32, objectFit: "contain" }}
+              />
+            </span>
+            <span className="text-sm font-bold sm:text-base">{skill.name}</span>
+          </motion.div>
           ))}
         </div>
       </section>
@@ -745,7 +718,6 @@ export default function Home() {
               </div>
             );
 
-            /* ===== LAYOUT "SPLIT": dua kotak terpisah, gambar kecil + tilt + border pink+hitam ===== */
             if (project.layout === "split") {
               return (
                 <div
@@ -798,7 +770,6 @@ export default function Home() {
               );
             }
 
-            /* ===== LAYOUT "COMBINED": satu card gabungan, gambar kecil dengan border pink+hitam juga ===== */
             return (
               <motion.div
                 key={`${project.title}-${project.subtitle}`}
@@ -864,13 +835,7 @@ export default function Home() {
             </div>
           </div>
 
-          {/* Contact list.
-              PENTING: parent tiap item pakai `flex-col items-center` di mobile.
-              Karena align-items bukan `stretch`, anaknya otomatis nyusut sesuai
-              konten (bukan lebar container) — jadi label yang panjang (email)
-              nggak tau kapan harus wrap dan malah nembus keluar layar.
-              Fix: kasih `w-full min-w-0` di container + `w-full max-w-full break-words`
-              di span labelnya, supaya dia dipaksa ikut lebar grid cell. */}
+          {/* Contact list. */}
           <div className="mx-auto grid max-w-2xl grid-cols-2 gap-x-4 gap-y-8 sm:gap-x-12 sm:gap-y-10">
             {CONTACTS.map((contact) => {
               const iconBox = (
